@@ -35,4 +35,12 @@ public class PeopleController {
         return "about";
     }
 
+    @RequestMapping(value = {"/registration"}, method = RequestMethod.GET)
+    public String renderRegistration(@RequestParam Map<String,String> allRequestParams,
+                                     Model model,
+                                     HttpServletRequest httpServletRequest){
+        return "registration";
+    }
+
+
 }
