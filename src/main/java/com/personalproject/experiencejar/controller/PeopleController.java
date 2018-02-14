@@ -42,5 +42,18 @@ public class PeopleController {
         return "registration";
     }
 
+    @RequestMapping(value = {"/jar"}, method = RequestMethod.GET)
+    public String renderUserJar(@RequestParam Map<String,String> allRequestParams,
+                                     Model model,
+                                     HttpServletRequest httpServletRequest){
+        return "user-jar";
+    }
+    @RequestMapping(value = {"/statistics"}, method = RequestMethod.GET)
+    public String renderStatistics(@RequestParam Map<String,String> allRequestParams,
+                                Model model,
+                                HttpServletRequest httpServletRequest){
+        return "statistics";
+    }
+
 
 }

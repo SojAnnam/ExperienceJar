@@ -14,6 +14,14 @@ h5,
 h6 {
   font-family: 'Raleway';
 }
+a {
+  color: black;
+}
+
+a:hover {
+  color: black;
+  text-decoration: underline;
+}
 
 p {
   line-height: 1.75;
@@ -45,7 +53,7 @@ p {
 
 .page-section {
   margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-bottom: 10rem;
 }
 
 .section-heading {
@@ -113,11 +121,11 @@ p {
 
 @media (min-width: 992px) {
   .intro .intro-img {
-    width: 75%;
-    float: right;
+    width: 50%;
+    float: left;
   }
   .intro .intro-text {
-    left: 0;
+    right: 0;
     width: 60%;
     margin-top: 3rem;
     position: absolute;
@@ -132,7 +140,7 @@ p {
 
 @media (min-width: 1200px) {
   .intro .intro-text {
-    width: 45%;
+    width: 80%;
   }
 }
 
