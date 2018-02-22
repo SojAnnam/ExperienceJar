@@ -30,6 +30,10 @@ p {
 .text-faded {
   color: rgba(255, 255, 255, 0.3);
 }
+.new{
+  margin-left: 1015px;
+  margin-top: 20px;
+}
 
 .site-heading {
   margin-top: 5rem;
