@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
   <head>
 
@@ -50,7 +50,7 @@
               <a class="nav-link text-uppercase text-expanded" href="/statistics">Statistics</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="/registration">Join in</a>
+              <a class="nav-link text-uppercase text-expanded" href="/registration">Registration</a>
             </li>
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="registration.html">Sign in</a>
@@ -72,14 +72,15 @@
                 <span class="section-heading-upper">Happiness Jar</span>
                 <span class="section-heading-lower">Registration</span>
               </h2>
-              <form class="form-horizontal">
 
+
+              <form  th:action="@{~/register}" method="POST" class="form-horizontal">
 
                   <!-- Text input-->
                   <div class="form-group col-md-12 row">
                     <label class="col-md-4 control-label" for="Username">Username</label>
                     <div class="col-md-6">
-                      <input id="Username" name="Username" type="text" placeholder="Username" class="form-control input-md">
+                      <input id="Username" name="name" type="text" placeholder="Enter your username...." class="form-control input-md">
 
                     </div>
                   </div>
@@ -95,16 +96,22 @@
                   <div class="form-group col-md-12 row">
                     <label class="col-md-4 control-label" for="passwordinput">Password</label>
                     <div class="col-md-6">
-                      <input id="passwordinput" name="passwordinput" type="password" placeholder="Password" class="form-control input-md">
+                      <input id="passwordinput" name="hashedpassword" type="password" placeholder="Password" class="form-control input-md">
                       <small id="passwordHelpInline" class="text-muted">
                         Must be 8-20 characters long.
                       </small>
                     </div>
-                    <div>
-                      <button id= "login-button" type="submit" class="btn btn-primary" >Login</button>
+                    <div >
+                      <button  id= "login-button" type="submit" class="btn btn-primary">Registration</button>
                     </div>
                   </div>
               </form>
+              <div th:if="${errors}" id="error-messages">
+                  <div class="alert" th:each="error : ${errors}">
+                    <span class="alert" th:text="${error}"></span>
+                    <br>
+                  </div>
+              </div>
 
             </div>
           </div>

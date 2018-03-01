@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 @Controller
-public class PeopleController {
+public class MainController {
 
     @Autowired
     public PersonDataHandler personDataHandler;
