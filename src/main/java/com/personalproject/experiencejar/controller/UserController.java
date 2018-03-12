@@ -32,12 +32,12 @@ public class UserController {
 
         System.out.println("IN POST REGISTER METHOD");
 
-        List<String> errorMessages = userService.doRegistration(formData);
+        String errorMessage = userService.doRegistration(formData);
 
         // IN CASE OF INVALID INPUT, RE-RENDER REGISTRATION PAGE
-        if (errorMessages != null) {
-            System.out.println(errorMessages);
-            model.addAttribute("errors", errorMessages);
+        if (errorMessage != null) {
+            System.out.println(errorMessage);
+            model.addAttribute("error", errorMessage);
             model.addAttribute("user", userData);
 
             return "registration";
