@@ -61,7 +61,7 @@ public class UserService {
 
         if (jsonObject.has("error")) {
             ArrayList listJson = new ArrayList<JsonObject>();
-            listJson.add(jsonObject.get("error"));
+            listJson.add(jsonObject.get("error").getAsString());
             return listJson;
         }
 
