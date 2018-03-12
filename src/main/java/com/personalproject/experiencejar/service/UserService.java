@@ -28,10 +28,10 @@ public class UserService {
 
     private final String HEROKU_URL = "https://hj-userservice.herokuapp.com/";
 
-    public List<String> doRegistration(MultiValueMap<String, String> formData) {
+    public String doRegistration(MultiValueMap<String, String> formData) {
 
         if (formData == null) {
-            return new ArrayList<>();
+            return null;
         }
 
         final String URI = HEROKU_URL + "registration-save";
@@ -47,22 +47,15 @@ public class UserService {
             response = restTemplate.exchange(URI, HttpMethod.POST, entity, String.class).getBody();
         } catch (RestClientException e) {
             System.out.println(e.getMessage());
-            return new ArrayList<>();
+            return null;
         }
 
-
-
-
-
-
-        Gson gson = new Gson();
         JsonObject jsonObject = new JsonParser().parse(response).getAsJsonObject();
-        ;
 
         if (jsonObject.has("error")) {
-            ArrayList listJson = new ArrayList<JsonObject>();
-            listJson.add(jsonObject.get("error").getAsString());
-            return listJson;
+            // ArrayList listJson = new ArrayList<JsonObject>();
+            //listJson.add(jsonObject.get("error"));
+            return jsonObject.get("error").getAsString();
         }
 
         return null;
