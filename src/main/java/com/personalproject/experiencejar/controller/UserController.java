@@ -32,7 +32,7 @@ public class UserController {
 
         System.out.println("IN POST REGISTER METHOD");
 
-        Map<String,String> errorMessages = userService.doRegistration(formData);
+        List<String> errorMessages = userService.doRegistration(formData);
 
         // IN CASE OF INVALID INPUT, RE-RENDER REGISTRATION PAGE
         if (errorMessages != null) {

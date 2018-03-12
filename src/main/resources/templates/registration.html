@@ -107,10 +107,11 @@
                   </div>
               </form>
               <div th:if="${errors}" id="error-messages">
-                  <div class="alert" th:each="error : ${errors}">
-                    <span class="alert" th:text="${error}"></span>
-                    <br>
-                  </div>
+                <div class="alert" th:each="error : ${errors}">
+                  <span class="alert" th:text="${error}"></span>
+                  <br>
+                </div>
+
               </div>
 
             </div>
